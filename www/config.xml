@@ -23,6 +23,6 @@
 	
 	<icon src="icon.png" />
 	<gap:splash src="splash.png" />
-    < access origin="*"/ >
+    <access origin="*"/>
 
 </widget>
