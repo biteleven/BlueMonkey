@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.bit11.bluemonkey"
+        versionCode = "10" 
+        version     = "1.0.6" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>BlueMonkey Project</name>
+
+    <description>
+        The BlueMonkey Project. 
+    </description>
+
+    <author href="http://www.bit11.gr" email="sigalas@bit11.gr">
+        Kostas Sigalas
+    </author>
+
+	<preference name="phonegap-version" value="3.5.0" />
+	<preference name="orientation" value="default" />
+	<preference name="fullscreen" value="true" />
+	
+	<icon src="icon.png" />
+	<gap:splash src="splash.png" />
+
+</widget>
