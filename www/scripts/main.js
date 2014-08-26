@@ -151,7 +151,7 @@ function showEmergencyConfirm() {
 var watch_id = null;    // ID of the geolocation
 //var tracking_data = []; // Array containing GPS position objects
 
-$("#startTracking_start").live('click', function(){
+$("#startTracking_start").on('click', function(){
 
     // Start tracking the User
     watch_id = navigator.geolocation.watchPosition(
@@ -176,7 +176,7 @@ $("#startTracking_start").live('click', function(){
     $("#startTracking_status").html("Tracking Started");
 });
 
-    $("#startTracking_stop").live('click', function(){
+    $("#startTracking_stop").on('click', function(){
 
         // Stop tracking the user
         navigator.geolocation.clearWatch(watch_id);
