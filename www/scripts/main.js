@@ -128,3 +128,20 @@ airlinesApp.prototype = function() {
         run:run,
     };
 }();
+
+// Emergency Call Functions
+// process the confirmation dialog result
+function onEmergencyConfirm(button) {
+    alert('Επιλέξατε ' + button);
+}
+
+// Show a custom confirmation dialog
+//
+function showEmergencyConfirm() {
+    navigator.notification.confirm(
+        'Επιβεβαίωση κλήσης ανάγκης',  // message
+        onEmergencyConfirm,              // callback to invoke with index of button pressed
+        'Κλήση ανάγκης',            // title
+        'Κλήση,Ακύρωση'          // buttonLabels
+    );
+}

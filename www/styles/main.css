@@ -159,6 +159,9 @@
     background-position:center;
     min-height:150px;
     min-width:150px;
+    margin:0;
+    margin-top:3px;
+
 }
 
 #bt_sos {
