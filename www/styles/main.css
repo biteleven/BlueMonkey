@@ -7,7 +7,6 @@ body{
 }
 .ui-page {
     background:#2c539e;
-    -webkit-backface-visibility: hidden;
 }
 .ui-content {
     padding:1em;
