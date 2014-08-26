@@ -26,5 +26,5 @@
     <access origin="*"/>
 
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
-
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.7" />
 </widget>

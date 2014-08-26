@@ -43,7 +43,7 @@
             <ul id="mainmenu">
                 <li class="box"><a href="#" data-role="button" id="bt_sos"  onclick="showEmergencyConfirm(); return false;" data-transition="flip" class="menu-item">Κλήση Ανάγκης</a></li>
                 <li class="box"><a href="#service" data-role="button" id="bt_help" data-transition="flip" class="menu-item" >Οδική Βοήθεια</a></li>
-                <li class="box"><a href="#underdev" data-role="button" id="bt_help" data-transition="flip" class="menu-item" >Service Centers</a></li>
+                <li class="box"><a href="#location" data-role="button" id="bt_location" data-transition="flip" class="menu-item" >Τοποθεσία</a></li>
                 <li class="box"><a href="#underdev" data-role="button" id="bt_help" data-transition="flip" class="menu-item" >Vehicles</a></li>
                 <li class="box"><a href="#underdev" data-role="button" id="bt_help" data-transition="flip" class="menu-item" >My Location</a></li>
                 <li class="box"><a href="#underdev" data-role="button" id="bt_help" data-transition="flip" class="menu-item" >Settings</a></li>
@@ -73,6 +73,27 @@
         </div>
         <div data-role="content">
             <p><a href="#" onclick="showEmergencyConfirm(); return false;">Κλήση ανάγκης</a></p>
+        </div>
+    </div>
+
+    <!-- Current Location page -->
+    <div id="location" data-role="page" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed"  data-tap-toggle="false">
+            <h1>Που βρίσκομαι;</h1>
+        </div>
+        <div data-role="content">
+
+            <p id="startTracking_status"></p>
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="track_id">Track ID/Name:</label>
+                <input type="text" name="track_id" id="track_id" placeholder="Workout ID/Name"/>
+            </div>
+
+            <button data-role="button" id="startTracking_start">Start Tracking</button>
+            <button data-role="button" id="startTracking_stop">Stop Tracking</button>
+
+            <p id="startTracking_debug"></p>
+            <p id="currentLocation"></p>
         </div>
     </div>
 

@@ -145,3 +145,53 @@ function showEmergencyConfirm() {
         'Κλήση,Ακύρωση'          // buttonLabels
     );
 }
+
+//Geolocation functions
+var track_id = '1';      // Name/ID of the exercise
+var watch_id = null;    // ID of the geolocation
+var tracking_data = []; // Array containing GPS position objects
+
+$("#startTracking_start").live('click', function(){
+
+    // Start tracking the User
+    watch_id = navigator.geolocation.watchPosition(
+
+        // Success
+        function(position){
+            tracking_data.push(position);
+            $("#currentLocation").html("Lat: <strong>" + tracking_data.latitude.toString() + "</strong><br>" +"Lon: <strong>" + tracking_data.longitude.toString() + "</strong><br>");
+        },
+
+        // Error
+        function(error){
+            console.log(error);
+        },
+
+        // Settings
+        { frequency: 3000, enableHighAccuracy: true });
+
+    // Tidy up the UI
+    track_id = $("#track_id").val();
+
+    $("#track_id").hide();
+    $("#startTracking_status").html("Tracking workout: <strong>" + track_id + "</strong>");
+});
+
+    $("#startTracking_stop").live('click', function(){
+
+        // Stop tracking the user
+        navigator.geolocation.clearWatch(watch_id);
+
+        // Save the tracking data
+        window.localStorage.setItem(track_id, JSON.stringify(tracking_data));
+
+        // Reset watch_id and tracking_data
+        var watch_id = null;
+        var tracking_data = null;
+
+        // Tidy up the UI
+        $("#track_id").val("").show();
+
+        $("#startTracking_status").html("Stopped tracking workout: <strong>" + track_id + "</strong>");
+
+    });
