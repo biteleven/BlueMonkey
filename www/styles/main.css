@@ -144,8 +144,9 @@
 }
 
 .menu-item {
+    color: white;
     background:url(../images/ice_air_logo.png) no-repeat center center;
     background-position:center;
-    height:200px;
-    width:200px;
+    min-height:200px;
+    min-width:200px;
 }
