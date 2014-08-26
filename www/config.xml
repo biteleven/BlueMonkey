@@ -25,4 +25,6 @@
 	<gap:splash src="splash.png" />
     <access origin="*"/>
 
+    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
+
 </widget>
