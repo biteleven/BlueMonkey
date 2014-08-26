@@ -19,7 +19,7 @@
 
 	<preference name="phonegap-version" value="3.5.0" />
 	<preference name="orientation" value="default" />
-	<preference name="fullscreen" value="false" />
+	<preference name="fullscreen" value="true" />
 	
 	<icon src="icon.png" />
 	<gap:splash src="splash.png" />

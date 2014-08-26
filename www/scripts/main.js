@@ -152,7 +152,7 @@ var watch_id = null;    // ID of the geolocation
 //var tracking_data = []; // Array containing GPS position objects
 
 function startGeolocation(){
-
+    console.log("Logation search started!");
     // Start tracking the User
     watch_id = navigator.geolocation.watchPosition(
 
@@ -177,7 +177,7 @@ function startGeolocation(){
 }
 
 function stopGeolocation(){
-
+    console.log("Logation search stopped!");
         // Stop tracking the user
         navigator.geolocation.clearWatch(watch_id);
 
