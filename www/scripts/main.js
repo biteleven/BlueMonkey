@@ -152,16 +152,20 @@ var watch_id = null;    // ID of the geolocation
 //var tracking_data = []; // Array containing GPS position objects
 
 function startGeolocation(){
-    console.log("Logation search started!");
+    console.log("Location search started!");
     // Start tracking the User
+
+    initMap();
     watch_id = navigator.geolocation.watchPosition(
 
         // Success
         function(position){
-           // tracking_data.push(position);
+            console.log("Location Updated");
             $("#currentLocation").html('Latitude: '  + position.coords.latitude      + '<br />' +
                                         'Longitude: ' + position.coords.longitude     + '<br />' +
                                         '<hr />');
+            marker.setPosition( new google.maps.LatLng( position.coords.latitude , position.coords.longitude ) );
+            map.panTo( new google.maps.LatLng( position.coords.latitude,  position.coords.longitude  ) );
         },
 
         // Error
@@ -177,7 +181,7 @@ function startGeolocation(){
 }
 
 function stopGeolocation(){
-    console.log("Logation search stopped!");
+    console.log("Location search stopped!");
         // Stop tracking the user
         navigator.geolocation.clearWatch(watch_id);
 
@@ -189,5 +193,28 @@ function stopGeolocation(){
         //var tracking_data = null;
 
         $("#startTracking_status").html("Tracking Stopped");
+
+}
+
+var marker;
+var map;
+function initMap()
+{
+
+    // Set the initial Lat and Long of the Google Map
+    var myLatLng = new google.maps.LatLng(38.04393,23.804930);
+
+// Google Map options
+    var myOptions = {
+        zoom: 15,
+        center: myLatLng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+// Create the Google Map, set options
+    map = new google.maps.Map( document.getElementById( 'map_canvas' ), myOptions );
+    marker = new google.maps.Marker( {position: myLatLng, map: map} );
+
+    marker.setMap( map );
 
 }
