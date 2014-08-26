@@ -11,10 +11,11 @@
 .ui-header.ui-bar-a {
 	background: #1f396a;
     border:none;
-    color: #white;
+    color: white;
 }
 .ui-header.ui-bar-a > .ui-title {
     text-shadow:none;
+    margin: .6em 20% .8em;
 }
 .ui-footer {
     text-align: center;    
