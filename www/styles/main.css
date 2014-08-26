@@ -147,6 +147,6 @@
     color: white;
     background:url(../images/ice_air_logo.png) no-repeat center center;
     background-position:center;
-    min-height:200px;
-    min-width:200px;
+    min-height:100px;
+    min-width:100px;
 }
